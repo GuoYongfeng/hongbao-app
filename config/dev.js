@@ -1,19 +1,18 @@
+var base = require('./base.js')
+
 module.exports = function (env) {
-  return {
+
+  let config = base()
+  return Object.assign(config, {
     devtool: 'cheap-module-source-map',
-    output: {
-        path: path.join(__dirname, '/../dist/assets'),
-        filename: '[name].bundle.js',
-        publicPath: publicPath,
-        sourceMapFilename: '[name].map'
-    },
+
     devServer: {
-        port: 7777,
-        host: 'localhost',
+        // port: 7777,
+        // host: 'localhost',
         historyApiFallback: true,
         noInfo: false,
         stats: 'minimal',
-        publicPath: publicPath
+        // publicPath: publicPath
     }
-  }
+  })
 }

@@ -1,17 +1,16 @@
+var webpack = require('webpack')
+var base = require('./base.js')
+
 module.exports = function (env) {
-  return {
-    output: {
-        path: path.join(__dirname, '/../dist/assets'),
-        filename: '[name].bundle.js',
-        publicPath: publicPath,
-        sourceMapFilename: '[name].map'
-    },
+  let config = base()
+
+  return Object.assign(config, {
     plugins: [
         new webpack.LoaderOptionsPlugin({
             minimize: true,
             debug: false
         }),
-        new UglifyJsPlugin({
+        new webpack.optimize.UglifyJsPlugin({
             beautify: false,
             mangle: {
                 screw_ie8: true,
@@ -23,5 +22,5 @@ module.exports = function (env) {
             comments: false
         })
     ]
-  }
+  })
 }

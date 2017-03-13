@@ -1,22 +1,21 @@
-
+var path = require('path')
 var getEntry = require('./get-entry.js')
 
 module.exports = function() {
-  return {
-    entry: {
-      'polyfills': './src/polyfills.ts',
-      'vendor': './src/vendor.ts',
-      'main': './src/main.ts'
-    },
+
+  let config = {
+    entry: getEntry.entrys,
     output: {
       path: path.join(__dirname, '/../public'),
-      filename: '[name].bundle.js',
-      publicPath: publicPath,
+      filename: "[name]/index.js",
+      // publicPath: '/../public'),
       sourceMapFilename: '[name].map'
     },
     resolve: {
-      extensions: ['', '.js', '.json'],
-      modules: [path.join(__dirname, 'src'), 'node_modules']
+      // extensions: ['.js', '.json'],
+      // modules: [path.join(__dirname, '../node_modules')]
+      moduleExtensions: ['node_modules', path.join(__dirname, '../node_modules')],
+  extensions: ['.web.js', '.js', '.json'],
     },
     module: {
       loaders: [{
@@ -35,15 +34,13 @@ module.exports = function() {
       }],
     },
     plugins: [
-      new ForkCheckerPlugin(),
-
-      new webpack.optimize.CommonsChunkPlugin({
-        name: ['polyfills', 'vendor'].reverse()
-      }),
-      new HtmlWebpackPlugin({
-        template: 'src/index.html',
-        chunksSortMode: 'dependency'
-      })
-    ],
+      // new ForkCheckerPlugin(),
+      // new webpack.optimize.CommonsChunkPlugin({
+      //   name: ['polyfills', 'vendor'].reverse()
+      // })
+    ]
   };
+
+  config.plugins.push(getEntry.setMultiLangTemplates())
+  return config
 }

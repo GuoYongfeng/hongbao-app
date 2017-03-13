@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --env=dev --progress --profile --colors",
-    "build": "webpack --env=prod --progress --profile --colors"
+    "start": "webpack-dev-server --env=dev --progress --colors --config ./config/dev.js",
+    "build": "webpack --env=prod --progress --colors  --config ./config/prod.js"
   },
   "repository": "git@github.com:GuoYongfeng/hongbao-app.git",
   "author": "guoyff <guoyff@yonyou.com>",
