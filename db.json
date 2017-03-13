@@ -1,0 +1,59 @@
+{
+  "user": {
+    "msg": "成功",
+    "code": 0,
+    "data": {
+			"amount": 5417.78,
+			"holdAmount": 2887817.99
+		}
+  },
+  "tag": {
+    "msg": "成功",
+    "code": 0,
+    "data": {
+			"1": "爱岗敬业",
+			"2": "乐于分享",
+			"3": "专业牛人",
+			"4": "热诚服务",
+			"5": "积极协作",
+			"6": "创意脑洞"
+		}
+  },
+  "income": {
+    "income": {
+      "msg": "成功",
+      "code": 0,
+      "data": [
+        {
+    			"tag": "爱岗敬业",
+    			"amount": 38
+    		},
+    		{
+    			"tag": "专业牛人",
+    			"amount": 200
+    		}
+    	]
+    }
+  },
+  "top": {
+    "msg": "成功",
+    "code": 0,
+    "data": [
+		{
+			"name":"刘诗诗",
+			"avatar":"http://test.staticoss.upesn.com/1/711/201503/2/1425263565TBfT.jpg",
+			"amount": 5980
+		},
+		{
+			"name": "张思思",
+			"avatar":"http://test.staticoss.upesn.com/1/711/201503/2/1425263565TBfT.jpg",
+			"amount": 5878
+		},
+		{
+			"name": "张思起",
+			"avatar":"http://test.staticoss.upesn.com/1/711/201503/2/1425263565TBfT.jpg",
+			"amount": 4876
+		}
+		]
+  }
+}
